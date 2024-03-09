@@ -41,62 +41,6 @@ Registeration Number : 212222040151
 ```
 ## MAIN ACTIVITY JAVA
 ```
-package com.example.steve;
-import androidx.appcompat.app.AppCompatActivity;
-import android.os.Bundle;
-import android.widget.Toast;
-public class MainActivity extends AppCompatActivity {
-
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
-        Toast toast = Toast.makeText(getApplicationContext(), "onCreate Called", Toast.LENGTH_LONG);
-        toast.show();
-
-    }
-
-    @Override
-    protected void onRestart() {
-        super.onRestart();
-        Toast toast = Toast.makeText(getApplicationContext(), "onRestart Called", Toast.LENGTH_LONG);
-        toast.show();
-    }
-
-    @Override
-    protected void onStart() {
-        super.onStart();
-        Toast toast = Toast.makeText(getApplicationContext(), "onstart Called", Toast.LENGTH_LONG);
-        toast.show();
-
-    }
-
-    @Override
-    protected void onPause() {
-        super.onPause();
-        Toast toast = Toast.makeText(getApplicationContext(), "onPause Called", Toast.LENGTH_LONG);
-        toast.show();
-    }
-
-    @Override
-    protected void onStop(){
-        super.onStop();
-        Toast toast = Toast.makeText(getApplicationContext(), "OnStop called", Toast.LENGTH_LONG);
-        toast.show();
-    }
-
-    @Override
-    protected void onDestroy(){
-        super.onDestroy();
-        Toast toast = Toast.makeText(getApplicationContext(), "OnDestroy called", Toast.LENGTH_LONG);
-        toast.show();
-    }
-
-}
-
-```
-## XML
-```
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools">
@@ -105,11 +49,11 @@ public class MainActivity extends AppCompatActivity {
         android:allowBackup="true"
         android:dataExtractionRules="@xml/data_extraction_rules"
         android:fullBackupContent="@xml/backup_rules"
-        android:icon="@drawable/ic_launcher_foreground"
+        android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/Theme.Steve"
+        android:theme="@style/Theme.ImplicityIntent"
         tools:targetApi="31">
         <activity
             android:name=".MainActivity"
@@ -123,6 +67,59 @@ public class MainActivity extends AppCompatActivity {
     </application>
 
 </manifest>
+
+```
+## XML
+```
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="403dp"
+        android:layout_height="159dp"
+        android:text="IMPLICIT INTENT"
+        android:textAlignment="center"
+        android:textColorHighlight="#FFFFFF"
+        android:textDirection="locale"
+        android:textSelectHandle="@android:drawable/alert_dark_frame"
+        android:textSize="34sp"
+        app:layout_constraintBottom_toTopOf="@+id/editTextText"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.033" />
+
+    <Button
+        android:id="@+id/button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="80dp"
+        android:rotationY="-4"
+        android:text="CLICK ME"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <EditText
+        android:id="@+id/editTextText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="180dp"
+        android:ems="10"
+        android:inputType="text"
+        android:text=" "
+        app:layout_constraintBottom_toTopOf="@+id/button"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.542"
+        app:layout_constraintStart_toStartOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
 ```
 ## OUTPUT
 
